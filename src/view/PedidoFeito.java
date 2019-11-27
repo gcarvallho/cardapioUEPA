@@ -31,15 +31,13 @@ public class PedidoFeito extends javax.swing.JFrame {
         textoPedidoFeito = new javax.swing.JLabel();
         textoNumPedido = new javax.swing.JLabel();
         numPedido = new javax.swing.JLabel();
-        shop = new javax.swing.JLabel();
-        slider = new javax.swing.JLabel();
         more = new javax.swing.JLabel();
-        cart = new javax.swing.JLabel();
-        config = new javax.swing.JLabel();
+        regPedido = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(130, 140, 143));
+        jPanel1.setPreferredSize(new java.awt.Dimension(344, 526));
 
         textoPedidoFeito.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         textoPedidoFeito.setForeground(new java.awt.Color(65, 71, 82));
@@ -53,77 +51,59 @@ public class PedidoFeito extends javax.swing.JFrame {
         numPedido.setForeground(new java.awt.Color(23, 252, 99));
         numPedido.setText("#5678");
 
-        shop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/shop.png"))); // NOI18N
+        more.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BOTOES/ADD (1).png"))); // NOI18N
 
-        slider.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/level.png"))); // NOI18N
-
-        more.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
-
-        cart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/shcart.png"))); // NOI18N
-
-        config.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/settings.png"))); // NOI18N
+        regPedido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BOTOES/regPedido.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(87, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(textoNumPedido)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(regPedido)
+                        .addGap(15, 15, 15)))
+                .addGap(84, 84, 84))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(textoPedidoFeito))
+                        .addGap(138, 138, 138)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(more)
+                            .addComponent(numPedido)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(shop)
-                        .addGap(41, 41, 41)
-                        .addComponent(slider)
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(numPedido)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 153, Short.MAX_VALUE)
-                                .addComponent(config)))))
-                .addGap(18, 18, 18))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(more)
-                        .addGap(43, 43, 43)
-                        .addComponent(cart))
-                    .addComponent(textoNumPedido))
-                .addGap(84, 84, 84))
+                        .addGap(131, 131, 131)
+                        .addComponent(textoPedidoFeito)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(243, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(config)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(textoPedidoFeito)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textoNumPedido)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(numPedido)
-                        .addGap(129, 129, 129)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(shop)
-                            .addComponent(slider, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(more, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cart, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addGap(48, 48, 48))
+                .addContainerGap(42, Short.MAX_VALUE)
+                .addComponent(regPedido)
+                .addGap(49, 49, 49)
+                .addComponent(textoPedidoFeito)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textoNumPedido)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(numPedido)
+                .addGap(135, 135, 135)
+                .addComponent(more)
+                .addGap(42, 42, 42))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
         );
 
         pack();
@@ -168,13 +148,10 @@ public class PedidoFeito extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel cart;
-    private javax.swing.JLabel config;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel more;
     private javax.swing.JLabel numPedido;
-    private javax.swing.JLabel shop;
-    private javax.swing.JLabel slider;
+    private javax.swing.JLabel regPedido;
     private javax.swing.JLabel textoNumPedido;
     private javax.swing.JLabel textoPedidoFeito;
     // End of variables declaration//GEN-END:variables
