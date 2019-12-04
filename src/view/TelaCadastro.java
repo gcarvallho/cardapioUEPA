@@ -1,7 +1,9 @@
 
 package view;
+import dao.UsuarioDAO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import model.Usuario;
 public class TelaCadastro extends javax.swing.JFrame {
 
     /**
@@ -21,16 +23,16 @@ public class TelaCadastro extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTNome_completo = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTUsuario = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jTTelefone = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jPSenha = new javax.swing.JPasswordField();
         jLabel9 = new javax.swing.JLabel();
-        jPasswordField2 = new javax.swing.JPasswordField();
-        jLabel4 = new javax.swing.JLabel();
+        jPSenha_confirmar = new javax.swing.JPasswordField();
+        jLCadastrar = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
@@ -51,75 +53,80 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("Nome completo");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(50, 80, 90, 14);
+        jLabel7.setBounds(50, 80, 90, 16);
 
-        jTextField1.setBackground(new java.awt.Color(102, 102, 102));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(50, 100, 280, 40);
+        jTNome_completo.setBackground(new java.awt.Color(102, 102, 102));
+        jTNome_completo.setForeground(new java.awt.Color(255, 255, 255));
+        jTNome_completo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTNome_completoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTNome_completo);
+        jTNome_completo.setBounds(50, 100, 280, 40);
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
         jLabel10.setText("Usuário");
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(50, 150, 50, 14);
+        jLabel10.setBounds(50, 150, 50, 16);
 
-        jTextField2.setBackground(new java.awt.Color(102, 102, 102));
-        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jTextField2);
-        jTextField2.setBounds(50, 170, 280, 40);
+        jTUsuario.setBackground(new java.awt.Color(102, 102, 102));
+        jTUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(jTUsuario);
+        jTUsuario.setBounds(50, 170, 280, 40);
 
         jLabel11.setBackground(new java.awt.Color(255, 255, 255));
         jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setText("Telefone");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(50, 220, 90, 14);
+        jLabel11.setBounds(50, 220, 90, 16);
 
-        jTextField3.setBackground(new java.awt.Color(102, 102, 102));
-        jTextField3.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jTextField3);
-        jTextField3.setBounds(50, 240, 280, 40);
+        jTTelefone.setBackground(new java.awt.Color(102, 102, 102));
+        jTTelefone.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(jTTelefone);
+        jTTelefone.setBounds(50, 240, 280, 40);
 
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Senha");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(50, 290, 50, 14);
+        jLabel8.setBounds(50, 290, 50, 16);
 
-        jPasswordField1.setBackground(new java.awt.Color(102, 102, 102));
-        jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        jPSenha.setBackground(new java.awt.Color(102, 102, 102));
+        jPSenha.setForeground(new java.awt.Color(255, 255, 255));
+        jPSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                jPSenhaActionPerformed(evt);
             }
         });
-        jPanel1.add(jPasswordField1);
-        jPasswordField1.setBounds(50, 310, 280, 40);
+        jPanel1.add(jPSenha);
+        jPSenha.setBounds(50, 310, 280, 40);
 
         jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setText("Confirme a senha");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(50, 360, 100, 14);
+        jLabel9.setBounds(50, 360, 100, 16);
 
-        jPasswordField2.setBackground(new java.awt.Color(102, 102, 102));
-        jPasswordField2.setForeground(new java.awt.Color(255, 255, 255));
-        jPasswordField2.addActionListener(new java.awt.event.ActionListener() {
+        jPSenha_confirmar.setBackground(new java.awt.Color(102, 102, 102));
+        jPSenha_confirmar.setForeground(new java.awt.Color(255, 255, 255));
+        jPSenha_confirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField2ActionPerformed(evt);
+                jPSenha_confirmarActionPerformed(evt);
             }
         });
-        jPanel1.add(jPasswordField2);
-        jPasswordField2.setBounds(50, 380, 280, 40);
+        jPanel1.add(jPSenha_confirmar);
+        jPSenha_confirmar.setBounds(50, 380, 280, 40);
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CRIAR-CONTA (1).png"))); // NOI18N
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLCadastrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CRIAR-CONTA (1).png"))); // NOI18N
+        jLCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                jLCadastrarMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(20, 440, 330, 70);
+        jPanel1.add(jLCadastrar);
+        jLCadastrar.setBounds(20, 440, 330, 70);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -142,17 +149,37 @@ public class TelaCadastro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void jPSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_jPSenhaActionPerformed
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel4MouseClicked
+    private void jLCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLCadastrarMouseClicked
+        Usuario u = new Usuario();
+        UsuarioDAO udao = new UsuarioDAO();
+        
+        u.setNome_completo(jTNome_completo.getText());
+        u.setUsuario(jTUsuario.getText());
+        u.setTelefone(jTTelefone.getText());
+        u.setSenha(String.valueOf(jPSenha.getPassword()));
+        //Aqui inserir o usuário no banco
+        udao.inserir(u);
+        
+        //limpar os campos
+        jTNome_completo.setText(null);
+        jTUsuario.setText(null);
+        jTTelefone.setText(null);
+        jPSenha.setText(null);
+        jPSenha_confirmar.setText(null);
+                
+    }//GEN-LAST:event_jLCadastrarMouseClicked
 
-    private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2ActionPerformed
+    private void jPSenha_confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPSenha_confirmarActionPerformed
+        
+    }//GEN-LAST:event_jPSenha_confirmarActionPerformed
+
+    private void jTNome_completoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTNome_completoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField2ActionPerformed
+    }//GEN-LAST:event_jTNome_completoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,21 +232,21 @@ public class TelaCadastro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLCadastrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPasswordField jPSenha;
+    private javax.swing.JPasswordField jPSenha_confirmar;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTNome_completo;
+    private javax.swing.JTextField jTTelefone;
+    private javax.swing.JTextField jTUsuario;
     // End of variables declaration//GEN-END:variables
 }

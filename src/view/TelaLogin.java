@@ -31,6 +31,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(null);
@@ -79,6 +80,11 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("CRIAR CONTA");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
         jPanel1.add(jLabel5);
         jLabel5.setBounds(130, 530, 100, 14);
 
@@ -86,12 +92,12 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("Usuário");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(50, 230, 50, 14);
+        jLabel7.setBounds(50, 230, 50, 16);
 
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Senha");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(50, 300, 50, 14);
+        jLabel8.setBounds(50, 300, 50, 16);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,6 +120,10 @@ public class TelaLogin extends javax.swing.JFrame {
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
      * @param args the command line arguments
