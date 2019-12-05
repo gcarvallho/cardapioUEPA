@@ -2,13 +2,12 @@
 package model;
 
 
-public class Usuario {
+public class Administrador {
    private String nome_completo;
    private String usuario;
-   private String telefone;
    private String senha;
    
-   public Usuario(){
+   public Administrador(){
        //Construtor vazio
    }
 
@@ -28,14 +27,6 @@ public class Usuario {
         this.usuario = usuario;
     }
 
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
     public String getSenha() {
         return senha;
     }
@@ -43,7 +34,5 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
-    
            
 }

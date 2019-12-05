@@ -61,7 +61,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Não lembro a senha!");
+        jLabel3.setText("Esqueci a senha!");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(110, 380, 140, 20);
 
